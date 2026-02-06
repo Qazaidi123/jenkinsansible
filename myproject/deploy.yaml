@@ -1,0 +1,8 @@
+---
+- name: jenkins ansible deployment
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: run docker container
+      docker_container: name: con1 , image: nginx:latest tty: true state: started ports: 80:80
