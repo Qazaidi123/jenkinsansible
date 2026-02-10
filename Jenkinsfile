@@ -3,15 +3,18 @@ pipeline {
 
   stages {
     stage ("code") {
-      steps {git url:"https://github.com/Qazaidi123/jenkinsansible.git" , branch: "main"
+      steps {
+        git url:"https://github.com/Qazaidi123/jenkinsansible.git" , branch: "main"
             }
     }
      stage ("Ansible playbook") {
-       steps { ansiblePlaybook ( 
+       steps { 
+         ansiblePlaybook ( 
          playbook: "ansible/deploy.yaml" ,
          inventory: "ansible/hosts.ini" ,
-         credentialsId: "{SSH_KEY}" )
+         credentialsId: "SSH_KEY" )
              }
   }  
 }
 }
+
