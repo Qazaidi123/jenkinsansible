@@ -10,4 +10,5 @@
         image: nginx:latest 
         tty: true 
         state: started 
-        ports: - "8080:80"
+        ports: 
+           - "80:80"
