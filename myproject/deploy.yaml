@@ -6,9 +6,8 @@
   tasks:
    - name: docker container run
      docker_container:
-       name: ansiblecon
-       image: nginx:latest
-       tty: true
-       state: started
-       ports:
-        - "80:80"
+       name=ansiblecon
+       image=nginx:latest
+       tty=true
+       state=started
+       ports=["8080:80"]
